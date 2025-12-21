@@ -1,42 +1,48 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
-}
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  * {
+    margin: 0;
+    padding: 0;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    box-sizing: border-box;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    margin: 0;
   }
+}
+
+.colors {
+  --primary-DarkGreen: #002916;
+  --primary-Green: #00331c;
+  --primary-MediumGreen: #007842;
+  --primary-LightestGreen: #009a57;
+  --primary-LightestestGreen: #e6f5ee;
+
+  --secondary-color: #a5cb00;
+  --secondary-color-light: #e6f2ef;
+
+  --border-color: #e2e2e2;
+  --shadow-color: #f2f2f7;
+
+  --red-color: #e85b48;
+  --red-color-light: #e98375;
+
+  --black-color: #333333;
+
+  --text-primary-color: #676767;
+
+  --gray-color: #555c62;
+  --gray-color-light: #707070;
+  --gray-color-lighter: #adadad;
+  --gray-color-lightest: #dedede;
+
+  --white-color: #dedede;
 }
