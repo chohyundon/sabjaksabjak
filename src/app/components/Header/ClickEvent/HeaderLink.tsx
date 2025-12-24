@@ -8,12 +8,20 @@ import SearchIcon from "@/app/assets/Logo/Search_icon.svg";
 
 export const HeaderClickEvent = ({
   headerData,
+  isLogin,
 }: {
+  isLogin: boolean;
   headerData: HeaderData;
 }) => {
   const pathname = usePathname();
 
-  return headerData.map(({ id, title, href }, idx) => (
+  const visibleItems = isLogin
+    ? headerData
+    : headerData.filter(
+        (item) => item.title !== "알림" && item.title !== "메세지"
+      );
+
+  return visibleItems.map(({ id, title, href }, idx) => (
     <Fragment key={id}>
       {idx === 3 && (
         <div className="relative ml-auto">

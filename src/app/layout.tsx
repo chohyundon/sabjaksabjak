@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import localFont from "next/font/local";
-import Header from "@/app/components/Header/Header";
+import Layout from "@/app/components/Layout/Layout";
 
 const pretendard = localFont({
   src: "./fonts/PretendardVariable.ttf",
@@ -20,9 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pretendard.className} colors w-10/15 mx-auto`}>
-        <Header />
-        {children}
+      <body className={`${pretendard.className} colors`}>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
