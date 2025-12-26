@@ -60,17 +60,17 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     const jwtToken = createJwtToken({ userId });
-    const redirectResponse = NextResponse.redirect(
-      new URL("http://localhost:3000"),
-      302
-    );
-    redirectResponse.cookies.set("jwtToken", jwtToken, {
+
+    const result = NextResponse.json({ success: true }, { status: 200 });
+
+    result.cookies.set("jwtToken", jwtToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60 * 24 * 30,
       path: "/",
     });
-    return redirectResponse;
+
+    return result;
   }
 }

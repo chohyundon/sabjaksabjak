@@ -41,7 +41,9 @@ export default function LoginScreen() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ accessToken: accessToken }),
       });
-      if (response.ok) window.location.replace("/");
+      if (response.ok) {
+        window.location.replace("/");
+      }
     };
 
     fetchGoogleLogin();
