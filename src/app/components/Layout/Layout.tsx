@@ -8,9 +8,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isLogin = false;
 
+  const notLoginPages = ["/login", "/signup"];
+
   return (
     <>
-      {pathname !== "/login" ? (
+      {!notLoginPages.includes(pathname) ? (
         <main className="w-10/15 mx-auto">
           <Header isLogin={isLogin} />
           {children}
